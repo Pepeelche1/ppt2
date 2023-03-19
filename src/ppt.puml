@@ -1,0 +1,53 @@
+@startuml
+'Jose Daniel Guijarro Gili
+class Game {
+-parser:Parser
++Game()
+-welcome()
+-printHelp()
+-computerMove()
+-printWinner(who:int)
+-printMoves(player:Move,computer:Move)
+-processMove(move:Move)
++playGame()
++main()
+}
+
+class Move {
+-move:String
++Move(move:String)
++getMove()
++isUnknown()
++beats(other:Move)
+}
+
+class MoveWords {
++empate:int
++gana:int
++pierde:int
+-validMoves:String[]
+-validMoves:String[]
+-rnd:Random
++MoveWords()
++isValidMoveCommand(value:String)
++randomMove()
++showMoves()
++showCommands()
++showWords()
+-getIndex(value:String)
++checkWinner(first:String,second:String)
+}
+
+class Parser {
+-moves:MoveWords
+-reader:Scanner
++Parser()
++showCommands
++newRandomMove()
++getMove()
+}
+Game <|-- Parser
+Move <|-- MoveWords
+Parser <|-- MoveWords
+
+@enduml
